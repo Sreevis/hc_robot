@@ -1,49 +1,48 @@
 import os
-
 from ament_index_python.packages import get_package_share_directory
-
-
 from launch import LaunchDescription
-from launch.actions import ExecuteProcess, IncludeLaunchDescription, RegisterEventHandler
-from launch.event_handlers import OnProcessExit
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-
+from launch.actions import DeclareLaunchArgument, ExecuteProcess
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 import xacro
 
-
 def generate_launch_description():
-    gazebo = IncludeLaunchDescription(
-                PythonLaunchDescriptionSource([os.path.join(
-                    get_package_share_directory('gazebo_ros'), 'launch'), '/gazebo.launch.py']),
-             )
 
-    hcr_description_path = os.path.join(
+  hcr_description_path = os.path.join(
         get_package_share_directory('hcr_description'))
-
-    xacro_file = os.path.join(hcr_description_path,
+  xacro_file = os.path.join(hcr_description_path,
                               'urdf',
                               'hcr.xacro')
 
-    doc = xacro.parse(open(xacro_file))
-    xacro.process_doc(doc)
-    params = {'robot_description': doc.toxml()}
+  doc = xacro.parse(open(xacro_file))
+  xacro.process_doc(doc)
+  params = {'robot_description': doc.toxml()}
 
-    node_robot_state_publisher = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        output='screen',
-        parameters=[params]
-    )
-
-    spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
-                        arguments=['-topic', 'robot_description',
-                                   '-entity', 'hcr'],
-                        output='screen')
-
-    return LaunchDescription([
-        gazebo,
-        node_robot_state_publisher,
-        spawn_entity,
-    ])
+  return LaunchDescription([
+    #   publishes TF for links of the robot without joints
+        Node(
+            package='robot_state_publisher',
+            executable='robot_state_publisher',
+            name='robot_state_publisher',
+            output='screen',
+            parameters=[params]),
+    #  To publish tf for Joints only links
+        Node(
+            package='joint_state_publisher',
+            executable='joint_state_publisher',
+            name='joint_state_publisher',
+            output='screen',
+            ),
+#  Gazebo related stuff required to launch the robot in simulation
+        ExecuteProcess(
+            cmd=['gazebo', '--verbose', '-s', 'libgazebo_ros_factory.so'],
+            output='screen'),
+        Node(
+            package='gazebo_ros',
+            executable='spawn_entity.py',
+            name='urdf_spawner',
+            output='screen',
+            arguments=["-topic", "/robot_description", "-entity", "hcr"])
+  ])
