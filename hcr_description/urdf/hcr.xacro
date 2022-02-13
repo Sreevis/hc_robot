@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
@@ -7,17 +7,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="0.272181582028018 0.159269166288147 -0.214076713479967"
+        xyz="-0.024595 0.00063611 0.010099"
         rpy="0 0 0" />
       <mass
-        value="0.238604296907217" />
+        value="0.2386" />
       <inertia
-        ixx="0.00161602401364483"
-        ixy="-1.84233988198401E-06"
-        ixz="4.03736610228801E-06"
-        iyy="0.00374746677459711"
-        iyz="8.99304562369235E-05"
-        izz="0.00230237339404268" />
+        ixx="0.0023024"
+        ixy="4.0374E-06"
+        ixz="8.993E-05"
+        iyy="0.001616"
+        iyz="-1.8423E-06"
+        izz="0.0037475" />
     </inertial>
     <visual>
       <origin
@@ -30,7 +30,7 @@
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
     <collision>
@@ -47,17 +47,17 @@
     name="LinkLeft">
     <inertial>
       <origin
-        xyz="-2.83106871279415E-15 1.46593459593447E-10 1.7430501486615E-14"
+        xyz="-2.7756E-15 1.4659E-10 1.7375E-14"
         rpy="0 0 0" />
       <mass
-        value="0.379534844701067" />
+        value="0.37953" />
       <inertia
-        ixx="0.000202456724984328"
-        ixy="-2.90089588535188E-17"
-        ixz="3.42712764498833E-17"
-        iyy="0.000385298716133126"
-        iyz="3.6870366115527E-17"
-        izz="0.0002024567249846" />
+        ixx="0.00020246"
+        ixy="-2.9E-17"
+        ixz="3.4286E-17"
+        iyy="0.0003853"
+        iyz="3.6874E-17"
+        izz="0.00020246" />
     </inertial>
     <visual>
       <origin
@@ -70,7 +70,7 @@
       <material
         name="">
         <color
-          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+          rgba="0.77647 0.75686 0.73725 1" />
       </material>
     </visual>
     <collision>
@@ -87,17 +87,14 @@
     name="leftjoint"
     type="continuous">
     <origin
-      xyz="0.40548 0.25877 0.17596"
-      rpy="0 0 -1.5708" />
+      xyz="-0.069286 0.13393 0.026792"
+      rpy="0 0 0" />
     <parent
       link="base_link" />
     <child
       link="LinkLeft" />
     <axis
       xyz="0 1 0" />
-    <limit
-      effort="1"
-      velocity="1" />
   </joint>
   <link
     name="LinkRight">
@@ -109,10 +106,10 @@
         value="0.379534844701062" />
       <inertia
         ixx="0.000202456724984576"
-        ixy="2.21258446150424E-17"
-        ixz="7.92052711665349E-17"
+        ixy="2.21226724094959E-17"
+        ixz="7.92015111702085E-17"
         iyy="0.000385298716133122"
-        iyz="4.21419864991452E-17"
+        iyz="4.21440826426833E-17"
         izz="0.000202456724984348" />
     </inertial>
     <visual>
@@ -143,33 +140,30 @@
     name="rightjoint"
     type="continuous">
     <origin
-      xyz="0.14048 0.25877 0.17596"
-      rpy="0 0 -1.5708" />
+      xyz="-0.069286 -0.13107 0.026792"
+      rpy="0 0 0" />
     <parent
       link="base_link" />
     <child
       link="LinkRight" />
     <axis
       xyz="0 1 0" />
-    <limit
-      effort="1"
-      velocity="1" />
   </joint>
   <link
     name="TopBase">
     <inertial>
       <origin
-        xyz="-7.26514852711357E-06 -0.00189838417120639 0.0581417426450621"
+        xyz="-7.26514852761317E-06 -0.00189838417120627 0.058141742645062"
         rpy="0 0 0" />
       <mass
-        value="0.405244396507161" />
+        value="0.405244396507155" />
       <inertia
-        ixx="0.00517247846865477"
-        ixy="9.24430384033536E-07"
-        ixz="-5.13991389366313E-08"
-        iyy="0.00504424828111493"
-        iyz="4.89241500471395E-05"
-        izz="0.00957090759883802" />
+        ixx="0.00517247846818346"
+        ixy="9.24430319882831E-07"
+        ixz="-5.13991389350515E-08"
+        iyy="0.00504424828112145"
+        iyz="4.89241500471061E-05"
+        izz="0.00957090759837318" />
     </inertial>
     <visual>
       <origin
@@ -199,8 +193,8 @@
     name="topbase"
     type="fixed">
     <origin
-      xyz="0.271754547099807 0.199034844261066 0.149170531176844"
-      rpy="0 0 3.14159265358979" />
+      xyz="-0.0095529 0.00020907 0"
+      rpy="0 0 -1.5708" />
     <parent
       link="base_link" />
     <child
@@ -212,17 +206,17 @@
     name="FrontSensor">
     <inertial>
       <origin
-        xyz="0.00021957656203081 -0.000179778747185139 0.000802109957368631"
+        xyz="0.000219576562031087 -0.000179778747185388 0.000802109957368766"
         rpy="0 0 0" />
       <mass
-        value="0.000220261894970755" />
+        value="0.000220261894970756" />
       <inertia
-        ixx="3.41447918387967E-09"
-        ixy="-1.75581067564555E-10"
-        ixz="-2.61441646449781E-11"
-        iyy="2.074229380082E-09"
-        iyz="-2.82144827727232E-11"
-        izz="5.3815105570092E-09" />
+        ixx="3.41447918387968E-09"
+        ixy="-1.75581067564551E-10"
+        ixz="-2.61441646449792E-11"
+        iyy="2.07422938008201E-09"
+        iyz="-2.8214482772722E-11"
+        izz="5.38151055700922E-09" />
     </inertial>
     <visual>
       <origin
@@ -252,8 +246,8 @@
     name="sensorfront"
     type="fixed">
     <origin
-      xyz="0.00265 0.20211 0.020713"
-      rpy="1.5708 0 3.1416" />
+      xyz="0.00264999999999826 0.202113784395946 0.0207131649230097"
+      rpy="1.57079632679491 0 3.14159265358979" />
     <parent
       link="TopBase" />
     <child
@@ -265,16 +259,16 @@
     name="LeftSensor">
     <inertial>
       <origin
-        xyz="1.59732457644113E-05 0.00366778084726832 -7.49171301575036E-05"
+        xyz="1.59732457643558E-05 0.00366778084726835 -7.49171301571983E-05"
         rpy="0 0 0" />
       <mass
-        value="0.0040108129214545" />
+        value="0.00401081292145451" />
       <inertia
         ixx="1.13242599869644E-07"
-        ixy="3.25699932395782E-14"
-        ixz="-3.54101401644334E-14"
+        ixy="3.25699933289137E-14"
+        ixz="-3.54101401451094E-14"
         iyy="3.75731975529152E-07"
-        iyz="9.43354550518283E-15"
+        iyz="9.43354549507646E-15"
         izz="3.11874315201979E-07" />
     </inertial>
     <visual>
@@ -305,8 +299,8 @@
     name="sensorleft"
     type="fixed">
     <origin
-      xyz="-0.048469 0.17877 0.02025"
-      rpy="0 0 0.65134" />
+      xyz="-0.048468609467237 0.178768106046641 0.0202499999999995"
+      rpy="0 0 0.651344982786181" />
     <parent
       link="TopBase" />
     <child
@@ -318,16 +312,16 @@
     name="Right Sensor">
     <inertial>
       <origin
-        xyz="1.59732623157272E-05 0.00366778084065505 -7.4917144829767E-05"
+        xyz="1.59732623161157E-05 0.00366778084065522 -7.49171448294339E-05"
         rpy="0 0 0" />
       <mass
-        value="0.00401081292345314" />
+        value="0.00401081292345283" />
       <inertia
         ixx="1.13242599872581E-07"
-        ixy="3.25729119000475E-14"
-        ixz="-3.54161355195564E-14"
+        ixy="3.25729124856913E-14"
+        ixz="-3.54161355220121E-14"
         iyy="3.75731975536213E-07"
-        iyz="9.4399518434269E-15"
+        iyz="9.43995184901037E-15"
         izz="3.11874315207144E-07" />
     </inertial>
     <visual>
@@ -358,8 +352,8 @@
     name="sensorright"
     type="fixed">
     <origin
-      xyz="0.048468 0.17877 0.020175"
-      rpy="0 0.0058824 -0.65134" />
+      xyz="0.0484684340402228 0.178768239779714 0.0201750003243945"
+      rpy="0 0.00588236142210134 -0.651344982786172" />
     <parent
       link="TopBase" />
     <child
@@ -371,17 +365,17 @@
     name="Back Sensor">
     <inertial>
       <origin
-        xyz="1.59732411140201E-05 0.00366778081525609 -7.49172286142741E-05"
+        xyz="1.5973240484024E-05 0.00366778081506303 -7.49172293727784E-05"
         rpy="0 0 0" />
       <mass
-        value="0.00401081299707549" />
+        value="0.0040108129974793" />
       <inertia
-        ixx="1.13242599922018E-07"
-        ixy="3.25723280523753E-14"
-        ixz="-3.54059303020558E-14"
-        iyy="3.75731975485628E-07"
-        iyz="9.43882406426771E-15"
-        izz="3.11874315114205E-07" />
+        ixx="1.13242599922043E-07"
+        ixy="3.25723592787925E-14"
+        ixz="-3.54059421448397E-14"
+        iyy="3.75731975485677E-07"
+        iyz="9.4388356061855E-15"
+        izz="3.11874315114256E-07" />
     </inertial>
     <visual>
       <origin
@@ -411,12 +405,118 @@
     name="sensorback"
     type="fixed">
     <origin
-      xyz="0 -0.13629 0.02025"
-      rpy="0 0 3.1416" />
+      xyz="0 -0.136292231744059 0.0202500000000009"
+      rpy="0 0 3.14159265358979" />
     <parent
       link="TopBase" />
     <child
       link="Back Sensor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Roller">
+    <inertial>
+      <origin
+        xyz="-1.56125112837913E-17 0.00392642788355968 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0024920522859458" />
+      <inertia
+        ixx="9.99323408278675E-08"
+        ixy="-3.14892146581247E-22"
+        ixz="4.0793575130789E-23"
+        iyy="1.84120231682541E-07"
+        iyz="1.25469865294303E-25"
+        izz="9.99323408278676E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///$(find hcr_description)/meshes/Roller.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///$(find hcr_description)/meshes/Roller.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rollerfront"
+    type="fixed">
+    <origin
+      xyz="0.17582 0.00020907 -0.0003"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Roller" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="UV">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///$(find hcr_description)/meshes/UV.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///$(find hcr_description)/meshes/UV.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="uv"
+    type="fixed">
+    <origin
+      xyz="-0.00955294851552965 0.000209074196459991 0.0880000000000047"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="UV" />
     <axis
       xyz="0 0 0" />
   </joint>
