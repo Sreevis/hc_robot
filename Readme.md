@@ -32,7 +32,7 @@ Ubuntu 20.04 (ROS2 foxy)
 
 **Important: Always remember to source the path while opening each terminals**
 
-**ie. Do this for each terminal**
+**ie. Do this in every terminal you opens**
 
 `>source /opt/ros/foxy/setup.bash`
 
@@ -45,3 +45,9 @@ To display the robot in rviz
 Launch empty world in gazebo
 
 `>ros2 launch hcr_gazebo hcr_world.launch.py`
+
+To run the robot in teleop mode:
+
+`>ros2 run teleop_twist_keyboard teleop_twist_keyboard`
+Press 'i' to move forward ..
+
