@@ -544,6 +544,26 @@
   <material>Gazebo/Orange</material>
 </gazebo>
 
+<gazebo reference="LinkLeft">
+  <material>Gazebo/Black</material>
+</gazebo>
+
+<gazebo reference="LinkRight">
+  <material>Gazebo/Black</material>
+</gazebo>
+
+<gazebo reference="TopBase">
+  <material>Gazebo/Gray</material>
+</gazebo>
+
+<gazebo reference="Roller">
+  <material>Gazebo/Black</material>
+</gazebo>
+
+<gazebo reference="UV">
+  <material>Gazebo/Blue</material>
+</gazebo>
+
 <link name="lidar">
     <inertial>
             <mass value="0.005" />
