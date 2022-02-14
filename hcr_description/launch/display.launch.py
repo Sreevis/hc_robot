@@ -12,7 +12,7 @@ def generate_launch_description():
 
     xacro_file = os.path.join(hcr_description_path,
                               'urdf',
-                              'hcr.xacro')
+                              'hcr.urdf.xacro')
     rviz_config_path = os.path.join(hcr_description_path, 'rviz/urdf_config.rviz')
 
     doc = xacro.parse(open(xacro_file))

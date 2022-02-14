@@ -12,11 +12,11 @@ def generate_launch_description():
 
   hcr_description_path = os.path.join(
         get_package_share_directory('hcr_description'))
-  xacro_file = os.path.join(hcr_description_path,
+  urdf = os.path.join(hcr_description_path,
                               'urdf',
-                              'hcr.xacro')
+                              'hcr.urdf.xacro')
 
-  doc = xacro.parse(open(xacro_file))
+  doc = xacro.parse(open(urdf))
   xacro.process_doc(doc)
   params = {'robot_description': doc.toxml()}
 
