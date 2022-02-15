@@ -634,7 +634,11 @@
         </noise>
       </ray>
       <plugin name="gazebo_ros_lidar_controller" filename="libgazebo_ros_ray_sensor.so">
-        <topicName>/hcr/laser/scan</topicName>
+        <ros>
+          <remapping>~/out:=scan</remapping>
+        </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <!--topicName>/hcr/laser/scan</topicName-->
         <frameName>lidar</frameName>
       </plugin>
     </sensor>
