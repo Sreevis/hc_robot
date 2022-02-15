@@ -529,6 +529,7 @@
 
   <gazebo>
     <plugin filename="libgazebo_ros_diff_drive.so" name="gazebo_base_controller">
+      <namespace>/hcr</namespace>
       <odometry_frame>odom</odometry_frame>
       <commandTopic>cmd_vel</commandTopic>
       <publish_odom>true</publish_odom>
@@ -671,7 +672,7 @@
   <sensor name="imu_sensor" type="imu">
    <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
       <ros>
-        <!--namespace>/hcr</namespace-->
+        <namespace>/hcr</namespace>
         <remapping>~/out:=imu</remapping>
       </ros>
       <initial_orientation_as_reference>false</initial_orientation_as_reference>
