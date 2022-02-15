@@ -614,7 +614,7 @@
       <ray>
         <scan>
           <horizontal>
-            <samples>720</samples>
+            <samples>360</samples>
             <resolution>1</resolution>
             <min_angle>-1.570796</min_angle>
             <max_angle>1.570796</max_angle>
@@ -684,7 +684,7 @@
       <initial_orientation_as_reference>false</initial_orientation_as_reference>
     </plugin>
     <always_on>true</always_on>
-    <update_rate>100</update_rate>
+    <update_rate>20</update_rate>
     <visualize>true</visualize>
     <imu>
       <angular_velocity>
