@@ -609,7 +609,7 @@
 <gazebo reference="lidar">
     <sensor type="gpu_ray" name="head_lidar_sensor">
       <pose>0 0 0 0 0 0</pose>
-      <visualize>true</visualize>
+      <visualize>false</visualize>
       <update_rate>20</update_rate>
       <ray>
         <scan>
@@ -685,7 +685,7 @@
     </plugin>
     <always_on>true</always_on>
     <update_rate>20</update_rate>
-    <visualize>true</visualize>
+    <visualize>false</visualize>
     <imu>
       <angular_velocity>
         <x>
