@@ -1,6 +1,10 @@
 # **Health Care Robot**
 
-Health care robot with autonomous navigation feature
+
+![hcr_hospital.jpg](media/hcr_hospital.jpg)
+
+
+Health care robot with autonomous navigation feature implemented in ROS2 framework
 
 ## **Core features:**
 
@@ -93,3 +97,4 @@ Clone the aws_hospital world in to your ros workspace. Make sure to add the requ
 
 Solution
 `. /usr/share/gazebo/setup.sh` 
+
